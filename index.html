@@ -1,293 +1,323 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <base target="_top">
-    <style>
-      body {
-        font-family: "Google Sans", Roboto, Arial, sans-serif;
-        padding: 40px 20px;
-        max-width: 800px;
-        margin: auto;
-        background: #f8f9fa;
-        color: #202124;
-      }
-      h2, h3 {
-        font-weight: 500;
-        margin-top: 30px;
-      }
-      label {
-        display: block;
-        font-size: 14px;
-        font-weight: 500;
-        margin-bottom: 4px;
-        margin-top: 20px;
-      }
-      input, textarea, select {
-        width: 100%;
-        padding: 10px;
-        font-size: 14px;
-        border: 1px solid #dadce0;
-        border-radius: 4px;
-        box-sizing: border-box;
-        background-color: #fff;
-      }
-      textarea {
-        resize: vertical;
-      }
-      button {
-        background-color: #1a73e8;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 14px;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-top: 20px;
-      }
-      button:hover {
-        background-color: #1765c1;
-      }
-      #submitStatus {
-        margin-top: 10px;
-        color: green;
-        font-weight: 500;
-      }
-      hr {
-        margin: 40px 0;
-        border: none;
-        border-top: 1px solid #dadce0;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        background-color: #fff;
-        border: 1px solid #dadce0;
-        border-radius: 6px;
-        overflow: hidden;
-      }
-      th, td {
-        padding: 12px 10px;
-        text-align: left;
-        border-bottom: 1px solid #e0e0e0;
-      }
-      th {
-        background-color: #f1f3f4;
-        font-weight: 500;
-        font-size: 13px;
-        color: #3c4043;
-      }
-      tr:last-child td {
-        border-bottom: none;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>Penalty Report Submission</h2>
+   <head>
+      <base target="_top">
+      <style>
+         body {
+         font-family: "Google Sans", Roboto, Arial, sans-serif;
+         padding: 20px;
+         max-width: 800px;
+         margin: auto;
+         background: #f8f9fa;
+         color: #202124;
+         }
+         h2, h3 {
+         font-weight: 500;
+         margin-top: 30px;
+         font-size: 1.5em;
+         }
+         label {
+         display: block;
+         font-size: 0.95em;
+         font-weight: 500;
+         margin-bottom: 4px;
+         margin-top: 20px;
+         }
+         input, textarea, select {
+         width: 100%;
+         padding: 10px;
+         font-size: 1em;
+         border: 1px solid #dadce0;
+         border-radius: 4px;
+         box-sizing: border-box;
+         background-color: #fff;
+         }
+         textarea {
+         resize: vertical;
+         }
+         button {
+         background-color: #1a73e8;
+         color: #fff;
+         border: none;
+         padding: 10px 20px;
+         font-size: 1em;
+         border-radius: 4px;
+         cursor: pointer;
+         margin-top: 20px;
+         }
+         button:hover {
+         background-color: #1765c1;
+         }
+         #submitStatus {
+         margin-top: 10px;
+         color: green;
+         font-weight: 500;
+         }
+         hr {
+         margin: 40px 0;
+         border: none;
+         border-top: 1px solid #dadce0;
+         }
+         table {
+         width: 100%;
+         border-collapse: collapse;
+         margin-top: 20px;
+         background-color: #fff;
+         border: 1px solid #dadce0;
+         border-radius: 6px;
+         overflow: hidden;
+         font-size: 0.95em;
+         }
+         th, td {
+         padding: 12px 10px;
+         text-align: left;
+         border-bottom: 1px solid #e0e0e0;
+         }
+         th {
+         background-color: #f1f3f4;
+         font-weight: 500;
+         color: #3c4043;
+         }
+         tr:last-child td {
+         border-bottom: none;
+         }
+         /* Responsive: make table scrollable */
+         .table-wrapper {
+         overflow-x: auto;
+         }
+         @media (max-width: 600px) {
+         body {
+         padding: 10px;
+         font-size: 0.95em;
+         }
+         input, textarea, select, button {
+         font-size: 1em;
+         }
+         h2, h3 {
+         font-size: 1.2em;
+         }
+         table {
+         font-size: 0.9em;
+         }
+         }	
+      </style>
+   </head>
+   <body>
+      <h2>Penalty Report Submission</h2>
+      <label for="player">Player Name</label>
+      <select id="player">
+         <option disabled selected>Loading...</option>
+      </select>
+      <label for="table">Table Number</label>
+      <input type="text" id="table" />
+      <label for="round">Round</label>
+      <input type="text" id="round" />
+      <label for="infraction">Infraction</label>
+      <select id="infraction">
+         <option disabled selected>Select an infraction</option>
+         <option>7.3.1.1 A.1. Procedural Error</option>
+         <option>7.3.1.2 A.2. Unsporting Conduct</option>
+         <option>7.3.1.3 A.3. Cheating</option>
+         <option>7.3.2.1 B.1. Gameplay Error</option>
+         <option>7.3.2.2 B.2. Deck Legality</option>
+         <option>7.3.2.3 B.3. Pace of Play</option>
+      </select>
+      <label for="severity">Severity</label>
+      <select id="severity">
+         <option disabled selected>Select severity</option>
+      </select>
+      <label for="penalty">Penalty Applied</label>
+      <select id="penalty">
+         <option disabled selected>Select penalty</option>
+         <option>Caution</option>
+         <option>Warning</option>
+         <option>Double Prize Card</option>
+         <option>Quad Prize Card</option>
+         <option>Game Loss</option>
+         <option>Match Loss</option>
+         <option>DQ</option>
+      </select>
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" rows="3" maxlength="500"></textarea>
+      <label for="staff">Issued By</label>
+      <select id="staff">
+         <option disabled selected>Loading...</option>
+      </select>
+      <button onclick="submit()">Submit Penalty</button>
+      <p id="submitStatus"></p>
+      <hr>
+      <h3>Previous Penalties for Player</h3>
+      <div class="table-wrapper">
+         <table id="penalties">
+            <thead>
+               <tr>
+                  <th>Table</th>
+                  <th>Round</th>
+                  <th>Infraction</th>
+                  <th>Penalty</th>
+                  <th>Notes</th>
+               </tr>
+            </thead>
+            <tbody id="penaltiesBody">
+               <tr>
+                  <td colspan="6">Loading...</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <script>
+        const severityMap = {
+            "7.3.1.1 A.1. Procedural Error": ["Minor: Caution", "Major: Warning", "Severe: Game Loss"],
+            "7.3.1.2 A.2. Unsporting Conduct": ["Minor: Warning", "Major: Match Loss", "Severe: Disqualification"],
+            "7.3.1.3 A.3. Cheating": ["Severe: Disqualification"],
+            "7.3.2.1 B.1. Gameplay Error": ["Minor: Warning", "Major: Double Prize Card", "Severe: Game Loss"],
+            "7.3.2.2 B.2. Deck Legality": ["Minor: Warning", "Severe: Game Loss"],
+            "7.3.2.3 B.3. Pace of Play": ["Minor: Warning", "Severe: Double Prize Card"]
+        };
 
-    <label for="player">Player Name</label>
-    <select id="player">
-      <option disabled selected>Loading...</option>
-    </select>
+        let validPlayerNames = [];
+        let validStaffNames = [];
 
-    <label for="table">Table Number</label>
-    <input type="text" id="table" />
+        google.script.run.withSuccessHandler(populatePlayers).getPlayers();
+        google.script.run.withSuccessHandler(populateStaff).getStaff();
 
-    <label for="round">Round</label>
-    <input type="text" id="round" />
+        function populatePlayers(names) {
+            validPlayerNames = names;
+            const playerSelect = document.getElementById("player");
+            playerSelect.innerHTML = "<option disabled selected>Select a player</option>";
+            names.forEach(name => {
+                const opt = document.createElement("option");
+                opt.textContent = name;
+                opt.value = name;
+                playerSelect.appendChild(opt);
+            });
 
-    <label for="infraction">Infraction</label>
-    <select id="infraction">
-      <option disabled selected>Select an infraction</option>
-      <option>7.3.1.1 A.1. Procedural Error</option>
-      <option>7.3.1.2 A.2. Unsporting Conduct</option>
-      <option>7.3.1.3 A.3. Cheating</option>
-      <option>7.3.2.1 B.1. Gameplay Error</option>
-      <option>7.3.2.2 B.2. Deck Legality</option>
-      <option>7.3.2.3 B.3. Pace of Play</option>
-    </select>
+            playerSelect.addEventListener("change", () => {
+                const tableBody = document.getElementById("penaltiesBody");
+                tableBody.innerHTML = '<tr><td colspan="6">Loading...</td></tr>';
+                google.script.run.withSuccessHandler(displaypenalties).getpenaltiesForPlayer(playerSelect.value);
+            });
+        }
 
-    <label for="severity">Severity</label>
-    <select id="severity">
-      <option disabled selected>Select severity</option>
-    </select>
+        function populateStaff(names) {
+            validStaffNames = names;
+            const staffSelect = document.getElementById("staff");
+            staffSelect.innerHTML = "<option disabled selected>Select staff</option>";
+            names.forEach(name => {
+                const opt = document.createElement("option");
+                opt.textContent = name;
+                opt.value = name;
+                staffSelect.appendChild(opt);
+            });
+        }
 
-    <label for="penalty">Penalty Applied</label>
-    <select id="penalty">
-      <option>Caution</option>
-      <option>Warning</option>
-      <option>Double Prize Card</option>
-      <option>Quad Prize Card</option>
-      <option>Game Loss</option>
-      <option>Match Loss</option>
-      <option>DQ</option>
-    </select>
+        document.getElementById("infraction").addEventListener("change", function() {
+            const selected = this.value;
+            const severityOptions = severityMap[selected] || [];
+            const severitySelect = document.getElementById("severity");
 
-    <label for="notes">Additional Notes</label>
-    <textarea id="notes" rows="3" maxlength="500"></textarea>
-
-    <label for="staff">Issued By</label>
-    <select id="staff">
-      <option disabled selected>Loading...</option>
-    </select>
-
-    <button onclick="submit()">Submit Penalty</button>
-    <p id="submitStatus"></p>
-
-    <hr>
-
-    <h3>Previous Penalties for Player</h3>
-    <table id="penalties">
-      <thead>
-        <tr>
-          <th>Table</th>
-          <th>Round</th>
-          <th>Infraction</th>
-          <th>Penalty</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody id="penaltiesBody">
-        <tr><td colspan="6">Loading...</td></tr>
-      </tbody>
-    </table>
-
-    <script>
-      const severityMap = {
-        "7.3.1.1 A.1. Procedural Error": ["Minor: Caution", "Major: Warning", "Severe: Game Loss"],
-        "7.3.1.2 A.2. Unsporting Conduct": ["Minor: Warning", "Major: Match Loss", "Severe: Disqualification"],
-        "7.3.1.3 A.3. Cheating": ["Severe: Disqualification"],
-        "7.3.2.1 B.1. Gameplay Error": ["Minor: Warning", "Major: Double Prize Card", "Severe: Game Loss"],
-        "7.3.2.2 B.2. Deck Legality": ["Minor: Warning", "Severe: Game Loss"],
-        "7.3.2.3 B.3. Pace of Play": ["Minor: Warning", "Severe: Double Prize Card"]
-      };
-
-      let validPlayerNames = [];
-      let validStaffNames = [];
-
-      google.script.run.withSuccessHandler(populatePlayers).getPlayers();
-      google.script.run.withSuccessHandler(populateStaff).getStaff();
-
-      function populatePlayers(names) {
-        validPlayerNames = names;
-        const playerSelect = document.getElementById("player");
-        playerSelect.innerHTML = "<option disabled selected>Select a player</option>";
-        names.forEach(name => {
-          const opt = document.createElement("option");
-          opt.textContent = name;
-          opt.value = name;
-          playerSelect.appendChild(opt);
+            severitySelect.innerHTML = "<option disabled selected>Select severity</option>";
+            severityOptions.forEach(s => {
+                const opt = document.createElement("option");
+                opt.textContent = s;
+                opt.value = s;
+                severitySelect.appendChild(opt);
+            });
         });
 
-        playerSelect.addEventListener("change", () => {
-          const tableBody = document.getElementById("penaltiesBody");
-          tableBody.innerHTML = '<tr><td colspan="6">Loading...</td></tr>';
-          google.script.run.withSuccessHandler(displaypenalties).getpenaltiesForPlayer(playerSelect.value);
-        });
-      }
+        function displaypenalties(penalties) {
+            const tableBody = document.getElementById("penaltiesBody");
+            if (!Array.isArray(penalties)) {
+                console.error("Invalid response:", penalties);
+                tableBody.innerHTML = '<tr><td colspan="6">Error loading penalties.</td></tr>';
+                return;
+            }
 
-      function populateStaff(names) {
-        validStaffNames = names;
-        const staffSelect = document.getElementById("staff");
-        staffSelect.innerHTML = "<option disabled selected>Select staff</option>";
-        names.forEach(name => {
-          const opt = document.createElement("option");
-          opt.textContent = name;
-          opt.value = name;
-          staffSelect.appendChild(opt);
-        });
-      }
+            tableBody.innerHTML = '';
 
-      document.getElementById("infraction").addEventListener("change", function() {
-        const selected = this.value;
-        const severityOptions = severityMap[selected] || [];
-        const severitySelect = document.getElementById("severity");
+            if (penalties.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="6">No penalties found.</td></tr>';
+                return;
+            }
 
-        severitySelect.innerHTML = "<option disabled selected>Select severity</option>";
-        severityOptions.forEach(s => {
-          const opt = document.createElement("option");
-          opt.textContent = s;
-          opt.value = s;
-          severitySelect.appendChild(opt);
-        });
-      });
-
-      function displaypenalties(penalties) {
-        const tableBody = document.getElementById("penaltiesBody");
-        if (!Array.isArray(penalties)) {
-          console.error("Invalid response:", penalties);
-          tableBody.innerHTML = '<tr><td colspan="6">Error loading penalties.</td></tr>';
-          return;
+            penalties.forEach(r => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                      <td>${r.table || ''}</td>
+                      <td>${r.round || ''}</td>
+                      <td>${r.infraction || ''}</td>
+                      <td>${r.penalty || ''}</td>
+                      <td>${r.notes || ''}</td>
+                    `;
+                tableBody.appendChild(row);
+            });
         }
 
-        tableBody.innerHTML = '';
+        function submit() {
+            const player = document.getElementById("player").value;
+            const table = document.getElementById("table").value;
+            const round = document.getElementById("round").value;
+            const infraction = document.getElementById("infraction").value;
+            const severity = document.getElementById("severity").value;
+            const penalty = document.getElementById("penalty").value;
+            const notes = document.getElementById("notes").value;
+            const staff = document.getElementById("staff").value;
 
-        if (penalties.length === 0) {
-          tableBody.innerHTML = '<tr><td colspan="6">No penalties found.</td></tr>';
-          return;
+            const tableNum = parseInt(table, 10);
+            const roundNum = parseInt(round, 10);
+
+            if (!validPlayerNames.includes(player)) {
+                alert("Please select a valid player from the dropdown.");
+                return;
+            }
+
+            if (isNaN(tableNum) || tableNum < 1 || tableNum > 100) {
+                alert("Table Number must be a number between 1 and 100.");
+                return;
+            }
+
+            if (isNaN(roundNum) || roundNum < 1 || roundNum > 100) {
+                alert("Round must be a number between 1 and 100.");
+                return;
+            }
+
+            if (infraction === "Select an infraction") {
+                alert("Please select a valid infraction.");
+                return;
+            }
+
+            if (severity === "Select severity") {
+                alert("Please select a valid severity.");
+                return;
+            }
+
+            if (penalty === "Select penalty") {
+                alert("Please select a valid penalty.");
+                return;
+            }
+
+            if (notes.length > 500) {
+                alert("Additional Notes cannot exceed 500 characters.");
+                return;
+            }
+
+            if (!validStaffNames.includes(staff)) {
+                alert("Please select a valid staff member from the dropdown.");
+                return;
+            }
+            google.script.run.withSuccessHandler(() => {
+            	document.getElementById("submitStatus").textContent = "Penalty submitted!";
+                // Reset fields to default/initial state
+                document.getElementById("player").selectedIndex = 0;
+                document.getElementById("table").value = '';
+                document.getElementById("round").value = '';   
+                document.getElementById("infraction").selectedIndex = 0;
+                document.getElementById("severity").innerHTML = '<option disabled selected>Select severity</option>';
+                document.getElementById("penalty").selectedIndex = 0;
+                document.getElementById("notes").value = '';
+                document.getElementById("staff").selectedIndex = 0;
+            }).submitpenalty(player, table, round, infraction, severity, penalty, notes, staff);
         }
-
-        penalties.forEach(r => {
-          const row = document.createElement("tr");
-          row.innerHTML = `
-            <td>${r.table || ''}</td>
-            <td>${r.round || ''}</td>
-            <td>${r.infraction || ''}</td>
-            <td>${r.penalty || ''}</td>
-            <td>${r.notes || ''}</td>
-          `;
-          tableBody.appendChild(row);
-        });
-      }
-
-      function submit() {
-        const player = document.getElementById("player").value;
-        const table = document.getElementById("table").value;
-        const round = document.getElementById("round").value;
-        const infraction = document.getElementById("infraction").value;
-        const severity = document.getElementById("severity").value;
-        const penalty = document.getElementById("penalty").value;
-        const notes = document.getElementById("notes").value;
-        const staff = document.getElementById("staff").value;
-
-        const tableNum = parseInt(table, 10);
-        const roundNum = parseInt(round, 10);
-
-        if (!validPlayerNames.includes(player)) {
-          alert("Please select a valid player from the dropdown.");
-          return;
-        }
-
-        if (!validStaffNames.includes(staff)) {
-          alert("Please select a valid staff member from the dropdown.");
-          return;
-        }
-
-        if (isNaN(tableNum) || tableNum < 1 || tableNum > 100) {
-          alert("Table Number must be a number between 1 and 100.");
-          return;
-        }
-
-        if (isNaN(roundNum) || roundNum < 1 || roundNum > 100) {
-          alert("Round must be a number between 1 and 100.");
-          return;
-        }
-
-        if (notes.length > 500) {
-          alert("Additional Notes cannot exceed 500 characters.");
-          return;
-        }
-
-        google.script.run.withSuccessHandler(() => {
-          document.getElementById("submitStatus").textContent = "Penalty submitted!";
-          document.getElementById("table").value = '';
-          document.getElementById("round").value = '';
-          document.getElementById("notes").value = '';
-          document.getElementById("staff").value = '';
-          document.getElementById("severity").value = '';
-          google.script.run.withSuccessHandler(displaypenalties).getpenaltiesForPlayer(player);
-        }).submitpenalty(player, table, round, infraction, severity, penalty, notes, staff);
-      }
-    </script>
-  </body>
+      </script>
+   </body>
 </html>
