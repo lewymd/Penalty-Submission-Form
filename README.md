@@ -12,7 +12,7 @@ You can try the live demo here
 
 [Data Sheet](https://docs.google.com/spreadsheets/d/16kKjrTR04BzWKrgnhJcaiP6986TlZCl2fhhYZLQ2sAw/edit?usp=sharing)
 
-[Form](https://script.google.com/macros/s/AKfycbw8WaaT20yMzbk7NbtKzg512Fqt85U41gQPShfsoxOeyi-4m8K0PUyL17oAZCFPZFaw5w/exec)
+[Form](https://script.google.com/macros/s/AKfycbwP3_jRpuHYxdeCRkgMa2R7DeRPcy_zrmMeeDue8kHA7kqFc7QtFZIQ6xhCLASK1BCK2Q/exec)
 
 ## Setup
 
