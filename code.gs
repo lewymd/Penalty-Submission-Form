@@ -26,7 +26,6 @@ function getpenaltiesForPlayer(selectedName) {
   const headers = data[0];
 
   const nameIndex = headers.indexOf("Player Name");
-  const tableIndex = headers.indexOf("Table Number");
   const roundIndex = headers.indexOf("Round");
   const infractionIndex = headers.indexOf("Infraction");
   const penaltyIndex = headers.indexOf("Penalty");
@@ -44,7 +43,6 @@ function getpenaltiesForPlayer(selectedName) {
     const nameInRow = row[nameIndex] ? row[nameIndex].toString().trim() : '';
     if (nameInRow.toLowerCase() === selectedName.trim().toLowerCase()) {
       const penalty = {
-        table: row[tableIndex] || '',
         round: row[roundIndex] || '',
         infraction: row[infractionIndex] || '',
         penalty: row[penaltyIndex] || '',
@@ -58,14 +56,10 @@ function getpenaltiesForPlayer(selectedName) {
   return JSON.parse(JSON.stringify(matchedpenalties)); // Safe serialization
 }
 
-
-
-
-
-function submitpenalty(player, table, round, infraction, severity, penalty, notes, staff) {
+function submitpenalty(player, round, infraction, severity, penalty, notes, staff) {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Penalties");
   sheet.appendRow([
-    new Date(), player, table, round, infraction, severity, penalty, notes, staff
+    new Date(), player, round, infraction, severity, penalty, notes, staff
   ]);
   return true;
 }
