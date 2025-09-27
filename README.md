@@ -8,17 +8,21 @@ You will need the project permission to view/edit your google sheets so we encou
 
 ## Demo
 
-You can try the live demo here
+You can try the live demo here (The Demo is only TCG but GO and VG forms are available)
 
 [Data Sheet](https://docs.google.com/spreadsheets/d/16kKjrTR04BzWKrgnhJcaiP6986TlZCl2fhhYZLQ2sAw/edit?usp=sharing)
 
 [Form](https://script.google.com/macros/s/AKfycbwP3_jRpuHYxdeCRkgMa2R7DeRPcy_zrmMeeDue8kHA7kqFc7QtFZIQ6xhCLASK1BCK2Q/exec)
 
-## Setup
+## Setupx
 
 This setup guide is for desktop users, once set up the forms can be used on mobile.
 
-Visit this [sheet and make a copy](https://docs.google.com/spreadsheets/d/1DGdwMcAGmVjL0X-f1E_JxmOo39cp-ivYQX0hK25JWEo/edit?usp=sharing) `File` -> `Make a copy`
+Visit the correct sheet for your game and make a copy `File` -> `Make a copy`
+
+[TCG](https://docs.google.com/spreadsheets/d/1DGdwMcAGmVjL0X-f1E_JxmOo39cp-ivYQX0hK25JWEo/edit?usp=sharing) 
+[VG](https://docs.google.com/spreadsheets/d/1VGqdJeL1RNFToeborvD6Jn1ZUxaZechkds0yJP8ytso/edit?usp=sharing)
+[GO](https://docs.google.com/spreadsheets/d/1f1LrxDvb9fqgVkHcUfTMnS9WVV6IMqj4ZNSLW8AHwts/edit?usp=sharing)
 
 This also makes a copy of the Apps Script, you can review to ensure you are happy with the scripts being run on your account.
 
@@ -46,3 +50,7 @@ If you need to generate a penalty report to submit after your event this will be
 ## Using for a new event
 
 You can either follow the instructions here again to make a new sheet or just clear the data in `Penalties`, `Players` & `Staff` leaving the headers as they are. 
+
+## GO Regional Version
+
+If you wish to use this for GO at a regional level event please contact me so we can ensure you are set up correctly, @lewymd on discord, twitter etc. 

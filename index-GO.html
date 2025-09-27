@@ -126,18 +126,17 @@
   </div>
 
   <label for="round">Round</label>
-  <input type="number" id="round" />
+  <input id="round" />
 
   <label for="infraction">Infraction</label>
   <select id="infraction">
-    <option disabled selected value="">Select an infraction</option>
+  	<option disabled selected value="">Select an infraction</option>
     <option>5.1 Procedural Error</option>
     <option>5.2 Tardiness</option>
     <option>5.3 Unsporting Conduct</option>
     <option>5.4 Cheating</option>
     <option>5.5 Gameplay Error</option>
-    <option>5.6 Deck Legality</option>
-    <option>5.7 Pace of Play</option>
+    <option>5.6 GO Team Error</option>
   </select>
 
   <label for="severity">Severity</label>
@@ -150,8 +149,6 @@
     <option disabled selected value="">Select penalty</option>
     <option>Caution</option>
     <option>Warning</option>
-    <option>Double Prize Card</option>
-    <option>Quad Prize Card</option>
     <option>Game Loss</option>
     <option>Match Loss</option>
     <option>Disqualification</option>
@@ -206,9 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "5.2 Tardiness": ["Minor: Warning", "Major: Game Loss", "Severe: Match Loss"],
     "5.3 Unsporting Conduct": ["Minor: Warning", "Major: Match Loss", "Severe: Disqualification"],
     "5.4 Cheating": ["Severe: Disqualification"],
-    "5.5 Gameplay Error": ["Minor: Warning", "Major: Double Prize Card", "Severe: Game Loss"],
-    "5.6 Deck Legality": ["Minor: Warning", "Major: Game Loss", "Severe: Disqualification"],
-    "5.7 Pace of Play": ["Minor: Warning", "Severe: Double Prize Card"]
+    "5.5 Gameplay Error": ["Minor: Warning", "Severe: Game Loss"],
+    "5.6 Team Check": ["Minor: Warning", "Major: Game Loss", "Severe: Disqualification"]
   };
 
   let validPlayerNames = [];
@@ -303,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function submitPenalty() {
     const data = {
       player: playerInput.value.trim(),
-      round: parseInt(roundInput.value, 10),
+      round: roundInput.value.toUpperCase().trim(),
       infraction: infractionInput.value,
       severity: severityInput.value,
       penalty: penaltyInput.value,
@@ -313,7 +309,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Validation
     if (!validPlayerNames.includes(data.player)) return alert("Please select a valid player from the list.");
-    if (isNaN(data.round) || data.round < 1 || data.round > 100) return alert("Round must be a number between 1 and 100.");
     if (!data.infraction) return alert("Please select an infraction.");
     if (!data.severity) return alert("Please select a severity.");
     if (!data.penalty) return alert("Please select a penalty.");

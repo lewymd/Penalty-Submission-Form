@@ -136,8 +136,7 @@
     <option>5.3 Unsporting Conduct</option>
     <option>5.4 Cheating</option>
     <option>5.5 Gameplay Error</option>
-    <option>5.6 Deck Legality</option>
-    <option>5.7 Pace of Play</option>
+    <option>5.6 VG Team Check</option>
   </select>
 
   <label for="severity">Severity</label>
@@ -150,8 +149,6 @@
     <option disabled selected value="">Select penalty</option>
     <option>Caution</option>
     <option>Warning</option>
-    <option>Double Prize Card</option>
-    <option>Quad Prize Card</option>
     <option>Game Loss</option>
     <option>Match Loss</option>
     <option>Disqualification</option>
@@ -206,9 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "5.2 Tardiness": ["Minor: Warning", "Major: Game Loss", "Severe: Match Loss"],
     "5.3 Unsporting Conduct": ["Minor: Warning", "Major: Match Loss", "Severe: Disqualification"],
     "5.4 Cheating": ["Severe: Disqualification"],
-    "5.5 Gameplay Error": ["Minor: Warning", "Major: Double Prize Card", "Severe: Game Loss"],
-    "5.6 Deck Legality": ["Minor: Warning", "Major: Game Loss", "Severe: Disqualification"],
-    "5.7 Pace of Play": ["Minor: Warning", "Severe: Double Prize Card"]
+    "5.5 Gameplay Error": ["Minor: Warning", "Severe: Game Loss"],
+    "5.6 VG Team Check": ["Minor: Warning", "Major: Game Loss", "Severe: Disqualification"]
   };
 
   let validPlayerNames = [];
